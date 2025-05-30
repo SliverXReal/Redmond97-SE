@@ -1,0 +1,30 @@
+/*********
+ * Menus *
+ *********/
+
+menubar {
+  padding: 2px;
+}
+
+menubar item label {
+	margin: .4em;
+}
+
+/***********
+ * Popover *
+ ***********/
+
+/*Fix menu BG color*/
+popover viewport {
+background-color: @bg_color;
+}
+
+/*Separator pinched horizontally like start menu/etc*/
+popover.background separator  {
+	border-left-width: 0px;
+	border-right-width: 0px;
+	margin-right: 8px;
+	margin-left: 8px;
+	margin-top: 0px;
+    margin-bottom: 1px;
+}
