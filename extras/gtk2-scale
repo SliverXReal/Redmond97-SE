@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Get current Redmond97 SE Theme...
+CURRENTTHEME=$(gsettings get org.gnome.desktop.interface gtk-theme | cut -d "'" -f2)
+
+# Load scaled GTK2 theme, then invoke program.
+env GTK2_RC_FILES="$HOME/.themes/$CURRENTTHEME/gtk-2.0-hidpi/gtkrc" "$1"
+
+
+
+
+
+

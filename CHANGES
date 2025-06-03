@@ -1,0 +1,70 @@
+v1.53
+~~~~~
+1) Once again, reverted to unscaled GTK2 as scaling it causes breakage with any combination of font/element scaling for Qt.
+   Since I only use a handful of GTK2 applications at this point, it works better for me, but the scaled assets are still
+   present in the themes and can be invoked in some environments. See README.md for more details.
+2) Modified theme templates/builder script to allow different modes for handling GTK2 assets.
+
+
+v1.50
+~~~~~
+1) Reverted to the upscaled GTK2 theme as default in HiDPI themes: Icons are still too small in GTK2 (And Qt) but window geometry
+   should be sane. I think function over form is a better choice. Also got rid of the gtk2-scale script since it isn't needed now.
+2) Fixed typo in GTK3 settings.ini
+3) Set font sizes in Metacity theme, though it seems to do nothing on my setup, with or without xfsettingsd running.
+4) Adjusted Spin boxes in GTK4: Now a 1:1 match for GTK3.
+
+
+v1.42
+~~~~~
+1) Redesigned themes to use normal scaled GTK2 assets/rc files by default (This fixes Qt theming), but with the scaled up variant
+   also included beside it. An included script under the "extra" folder called gtk2-scale can use this data to load GTK2 applications
+   to mostly scale properly on high resolution displays... on certain desktop environments... By default, Xfce4's xfsettingsd
+   component will override the flags it invokes, leaving GTK2 applications tiny on a 4K display.
+2) Defined button order on CSD windows. Again, this doesn't work on Xfce4 by default: See README for a workaround.
+
+
+v1.40
+~~~~~
+1) Split GTK4's gtk.css into separate, logical files like the GTK3 theme does.
+2) Fixed a bug with incorrect name data in index.theme.
+3) Misc typographical cleanups.
+4) Fully HiDPI variants of themes. GTK2 was scaled 2x as much as possible for both window/object geometry and PNG assets.
+   It still needs work but GTK3 and GTK4 appear to look fine using Xfce4's 2x Windows scaler. 
+5) Added missing graphics definitions for Mixed Mode checkboxes and radio buttons in GTK2 theme.
+
+
+v1.30
+~~~~~
+1) Completely rebuilt GTK4 schema and GTK3's CSD styling.
+2) Fixed sizes for all combobox states.
+3) Fixed all remaining CSD theming quirks.
+3) Added HiDPI Xfwm4 themes with all elements integer scaled 2x.
+
+v1.15
+~~~~~
+1) Further, massive, GTK4 improvements: It should be mostly complete and bug free now.
+2) Muted the whites in Jet and Dusk.
+3) Added remainder of Windows 95 Plus! themes and a few from Windows 98 SE.
+
+1.14
+~~~~
+Improved GTK4 support.
+
+1.13
+~~~~
+1) Fixed bug originally present in Redmond97 that caused constant events to be logged to ~/.xsession-errors
+2) Improved GTK4 popover separators and proper CSD window outlines without a compositor being enabled.
+3) Fixed some bugs with Whisker menu support.
+4) Extended theme generator config file format to allow defined font for Whisker menu side bar logo, if applicable.
+
+1.12
+~~~~
+1) Fixed title colors for Metacity in all themes/configs.
+2) Color for title button glyphs now configurable.
+3) Minor fix for exported Wine reg files.
+4) New default theme for builder script ("Ouroboros").
+
+v1.0
+~~~~
+Initial release.
