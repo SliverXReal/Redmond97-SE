@@ -4,7 +4,7 @@ Windows 95/NT4 UI for Xfce4
 
 v1.53 / 2025 Sliver X
 
-![Image Screenshot](https://raw.githubusercontent.com/SliverXReal/Redmond97-SE/refs/heads/main/screenshots/1-ouroboros-lodpi.png)
+![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/8839943752a53c74cadd2ec97cb9fd7e805b391c/screenshots/1-ouroboros-lodpi.png)
 
 These themes are recreations of the Windows 95 GUI controls for GTK2, GTK3, GTK4, Xfwm4, Metacity and Wine.
 
