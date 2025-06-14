@@ -2,7 +2,7 @@ Redmond97 SE
 
 Windows 95/NT4 UI for Xfce4
 
-v1.54 / 2025 Sliver X
+v1.55 / 2025 Sliver X
 
 ![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/8839943752a53c74cadd2ec97cb9fd7e805b391c/screenshots/1-ouroboros-lodpi.png)
 
@@ -11,8 +11,7 @@ These themes are recreations of the Windows 95 GUI controls for GTK2, GTK3, GTK4
 It is a fork of the Redmond97 project, but does not focus on recreating a clone of the Windows 95 desktop as a whole. (I just really like the UI elements)
 
 Therefore it doesn't include things like the Firefox theme, icon set, etc from its parent project.
-It does include a slightly modified variant of madmaxms' Obsidian icon theme with slight modifications
-to work better with the HiDPI themes.
+It does include a variant of madmaxms' Obsidian icon theme with slight modifications to work better with the HiDPI themes.
 
 The main additions are GTK4 support, HiDPI themes, companion Wine color themes and an extended builder script.
 
@@ -163,30 +162,22 @@ that amount, not just text.. It appears to be a conflict with using GDK_SCALE/Xf
 Credits
 -------
 Sliver X
-
 Redmond 97 SE
-
 https://github.com/SliverXReal/Redmond97-SE.git
 
 
 matthewmx86
-
 Redmond97 (Original GTK2/3/Xf4wm theme):
-
 https://github.com/matthewmx86/Redmond97.git
 
 
 parhelion22
-
 Greymond (Bits of GTK4 CSS/reference):
-
 https://github.com/parhelion22/xfce-theme-greymond
 
 
 madmaxms
-
 Obsidian Icon Theme:
-
 https://github.com/madmaxms/iconpack-obsidian/
 
 
