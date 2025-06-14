@@ -1,7 +1,7 @@
 ﻿V1.55
 ~~~~~
 1) Added slightly customized variant of Obsidian icon theme.
-2) index.theme: Curosr size set to 16/32 between Normal/HiDPI variants. Also set Obsidian Sand as default icon set.
+2) index.theme: Cursor size set to 16/32 between Normal/HiDPI variants. Also set Obsidian Sand as default icon set. Moot if running an xsetting daemon.
 
 
 v1.53
