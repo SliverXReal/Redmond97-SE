@@ -1,5 +1,5 @@
 #!/bin/bash
-#v1.53
+#v1.55
 #Dependencies: ImageMagick, bc, sed, grep, tee
 
 #Check if config file was passed from command line, if not, use default file.
@@ -605,6 +605,8 @@ cp theme.conf ~/.themes/"$theme_name"-HiDPI/
 cp version ~/.themes/"$theme_name"-HiDPI/
 cp LICENSE ~/.themes/"$theme_name"-HiDPI/
 cp index.theme ~/.themes/"$theme_name"-HiDPI/
+#Fix cursor size...
+sed -i 's/CursorSize=16/CursorSize=32/g' ~/.themes/"$theme_name"-HiDPI/index.theme
 
 # Copy Wine reg key.
 mkdir ~/.themes/"$theme_name"-HiDPI/wine

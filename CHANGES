@@ -1,6 +1,7 @@
-﻿V1.54
+﻿V1.55
 ~~~~~
 1) Added slightly customized variant of Obsidian icon theme.
+2) index.theme: Curosr size set to 16/32 between Normal/HiDPI variants. Also set Obsidian Sand as default icon set.
 
 
 v1.53
