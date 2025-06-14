@@ -170,11 +170,9 @@ matthewmx86
 Redmond97 (Original GTK2/3/Xf4wm theme):
 https://github.com/matthewmx86/Redmond97.git
 
-
 parhelion22
 Greymond (Bits of GTK4 CSS/reference):
 https://github.com/parhelion22/xfce-theme-greymond
-
 
 madmaxms
 Obsidian Icon Theme:
