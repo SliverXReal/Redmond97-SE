@@ -192,8 +192,8 @@ https://github.com/madmaxms/iconpack-obsidian/
 
 Additional Screenshots
 ----------------------
-![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/8839943752a53c74cadd2ec97cb9fd7e805b391c/screenshots/6-Ouroboros-OuterWorlds.png)
-![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/8839943752a53c74cadd2ec97cb9fd7e805b391c/screenshots/7-DuskBlue-SystemShockRemake.png)
-![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/8839943752a53c74cadd2ec97cb9fd7e805b391c/screenshots/8-JetRed-NierReplicant.png)
-![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/8839943752a53c74cadd2ec97cb9fd7e805b391c/screenshots/9-Whistler-FF7Remake.png)
-![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/8839943752a53c74cadd2ec97cb9fd7e805b391c/screenshots/10-Travel-Scorn.png)
+![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/321274dedc47d49c30ea5f6c8e7c4ff06e5f66c3/screenshots/6-Ouroboros-OuterWorlds.png)
+![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/321274dedc47d49c30ea5f6c8e7c4ff06e5f66c3/screenshots/7-DuskBlue-SystemShockRemake.png)
+![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/321274dedc47d49c30ea5f6c8e7c4ff06e5f66c3/screenshots/8-JetRed-NierReplicant.png)
+![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/321274dedc47d49c30ea5f6c8e7c4ff06e5f66c3/screenshots/9-Whistler-FF7Remake.png)
+![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/321274dedc47d49c30ea5f6c8e7c4ff06e5f66c3/screenshots/10-Travel-Scorn.png)
