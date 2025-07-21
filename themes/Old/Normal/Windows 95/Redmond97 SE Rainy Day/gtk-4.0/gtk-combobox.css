@@ -1,0 +1,6 @@
+/*Dimensions work fine in GTK3, but not 4. Voodoo-esque workaround*/
+combobox button:checked box {
+   margin: 0px;
+   margin-bottom: 0px;
+   margin-right: 0px;
+ }
