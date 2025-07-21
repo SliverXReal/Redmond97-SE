@@ -2,7 +2,7 @@ Redmond97 SE
 
 Windows 95/NT4 UI for Xfce4
 
-v1.55 / 2025 Sliver X
+v1.57 / 2025 Sliver X
 
 ![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/8839943752a53c74cadd2ec97cb9fd7e805b391c/screenshots/1-ouroboros-lodpi.png)
 
@@ -21,6 +21,8 @@ Included Themes
 
 Redmond97 SE Ouroboros
 
+Redmond97 SE Numidium
+
 Redmond97 SE Dusk (Three accent colors)
 
 Redmond97 SE Jet (Three accent colors)
@@ -31,7 +33,7 @@ Windows 95 (All)
 
 Windows 95 Plus! (All)
 
-Windows 98 SE (Baseball, Jungle, Space and Underwater)
+Windows 98 Plus! (Baseball, Jungle, Space and Underwater)
 
 Windows XP (Classic Theme)
 
@@ -97,7 +99,7 @@ This will load the scaled GTK2 theme for the currently selected Redmond97 SE the
 
 Theme generator script
 ----------------------------------------------------------
-(Requires imagemagick, bc, sed, grep, and tar to function)
+(Requires imagemagick, bc, sed, grep, tee and tar to function)
 
 To use the script:
 
@@ -179,9 +181,10 @@ https://github.com/parhelion22/xfce-theme-greymond
 
 
 
-madmaxms | Obsidian Icon Theme:
+Matthieu James & madmaxms | Faenza / Obsidian Icon Themes:
 
-https://github.com/madmaxms/iconpack-obsidian/
+https://github.com/shlinux/faenza-icon-theme
+https://github.com/madmaxms/iconpack-obsidian
 
 
 Additional Screenshots

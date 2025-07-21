@@ -1,6 +1,6 @@
 #!/bin/bash
-#v1.55
-#Dependencies: ImageMagick, bc, sed, grep, tee
+#v1.57
+#Dependencies: imagemagick, bc, sed, grep, tee, tar
 
 #Check if config file was passed from command line, if not, use default file.
 if [ -z $1 ]; then CONFY=theme.conf; else CONFY=$1; fi
@@ -343,6 +343,7 @@ echo "Generating rc and css config files..."
 
 #Theme index
 sed -i "s/Redmond97/Redmond97 SE - $Theme_name/g" index.theme
+sed -i "s/IconTheme=/IconTheme=$Icon_theme/g" index.theme
 
 #GTK-2.0
 sed -i 's/fg_color:#000/fg_color:'#$fgcolor'/g' base.rc
@@ -605,8 +606,6 @@ cp theme.conf ~/.themes/"$theme_name"-HiDPI/
 cp version ~/.themes/"$theme_name"-HiDPI/
 cp LICENSE ~/.themes/"$theme_name"-HiDPI/
 cp index.theme ~/.themes/"$theme_name"-HiDPI/
-#Fix cursor size...
-sed -i 's/CursorSize=16/CursorSize=32/g' ~/.themes/"$theme_name"-HiDPI/index.theme
 
 # Copy Wine reg key.
 mkdir ~/.themes/"$theme_name"-HiDPI/wine
