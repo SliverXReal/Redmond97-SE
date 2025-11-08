@@ -65,8 +65,21 @@ margin-top: 1px;
    box-shadow: 1px 0 @light_shadow inset;
    border-radius: 0px; }
 
-/*SIDELOGO*/
-/*SIDELOGOEND*/
+/* SIDELOGO */
+#whiskermenu-window box > scrolledwindow:first-child {
+  border: none;
+  box-shadow: none;
+  padding: 1px;
+  padding-left: 2px;
+  margin-left: 1px;
+  margin-bottom: 1px;
+  margin-right: 0px;
+  border-radius: 0px;
+  background-color: @button_bg_color;
+  border-image: url("assets/menu_side.png");
+  border-image-slice: 0 0 0 30;
+  border-left: 25px solid; }
+/* SIDELOGOEND */
 
 #whiskermenu-window treeview {
   background-color: @bg_color; }

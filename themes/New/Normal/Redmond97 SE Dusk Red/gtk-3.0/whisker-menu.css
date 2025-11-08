@@ -65,8 +65,8 @@ margin-top: 1px;
    box-shadow: 1px 0 @light_shadow inset;
    border-radius: 0px; }
 
-/*SIDELOGO*/
-/*SIDELOGOEND*/
+/* SIDELOGO */
+/* SIDELOGOEND */
 
 #whiskermenu-window treeview {
   background-color: @bg_color; }
