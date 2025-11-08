@@ -1,9 +1,8 @@
 /* File chooser hack to make the location bar 
    widget to match the window bg color */
 
-
 filechooser stack {
-   background-color: @theme_bg_color; }
+    background-color: @theme_bg_color; }
 
 
 filechooser stack box {
@@ -14,14 +13,6 @@ filechooser stack button box {
 
 .horizontal.dialog-actionbox {
    background-color: @theme_bg_color; }
-
-
-/* Fix text button pressing offset effect. 
-Filechooser buttons are giving me problems not wanting to move down on active... */
-.text-button:active label, .text-button:checked label {
-    margin-bottom: -2px;
-    margin-top: 0px;
-}
 
 /* Nemo hacks:
    Add padding below toolbar, hide separators since the 
@@ -264,3 +255,7 @@ text-shadow: 1px 1px @light_shadow;
 color: transparent;
 background-color: transparent; }
 
+
+.thunar .view {
+    border-radius: 0px;
+}

@@ -1,3 +1,18 @@
+v2.0
+~~~~~
+1) The entire project was basically started over, eliminating a lot of bugs.
+2) Support for virtually all existing Xfce4 plugins.
+3) Completely redesigned and improved XfcePanel click shift effect for 3D buttons. 
+   Microsoft themes only shift select Xfce Panel buttons, while mine shift all Xfce Panel buttons in addition to GTK3 and 4 ones.
+   GTK still needs work but is mostly tested as ok for most things. The mode can be set in a theme's config for compiling, including
+   disabling *all* button shift effects.
+4) Vastly improved spacing/geometry/etc of all Xfce panel elements.
+5) Greatly extended Deskbar support for all plugins.
+6) Fixed phantom outlines on icon move if using Thunar desktop icons.
+7) Combobox fixes for GTK3/4.
+8) Improved (Non-LibAdwaita) GTK4 support.
+9) Compile script no longer generates grayscale warnings: PNGs at issue are now converted to 8bit sRGB during compilation.
+
 v1.85
 ~~~~~
 1) Improved theming for Xfce4NotifyWindows.

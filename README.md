@@ -2,25 +2,22 @@ Redmond97 SE
 
 Windows 95 OSR2 UI for Xfce4 4.20
 
-v1.85 / 2025 Sliver X
+v2.0 / 2025 Sliver X
 
-![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/1-ouroboros.png)
+![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/4K-Ouroboros.png)
 
 These themes are recreations of the Windows 95 (OSR 2-era, "Detroit") GUI controls for GTK2, GTK3, GTK4, Xfwm4, Metacity and Wine.
 
 It is a fork of the Redmond97 project. The main additions are GTK4 support, HiDPI themes, companion Wine color themes and an extended builder script.
-It also has much deeper integration into Xfce4 and its plugins.
+It also has much deeper integration into Xfce4 and its plugins and full Deskbar panel support.
 
-It does not focus on recreating a clone of the Windows 9x desktop like its parent project, rather, using its visual language with a modern desktop
-environment.
+It does not focus on recreating a clone of the Windows 9x desktop like its parent project, (Though this can be done!), rather, using its visual language
+with a modern desktop environment.
 
 Included is variant of madmaxms' Obsidian icon theme (Based on Faenza) with slight modifications to work better with the HiDPI themes.
 
 It was developed for Xfce4 v4.20: The need to set a panel border is a fairly recent feature of Xfce so it will not work on much older versions
 than this.
-
-Very old (GTK2-based) versions of Xfce should work fine in theory (And the Xfwm4 themes are purely XPM-based, so will work on ancient versions of it),
-but this is untested as of now.
 
 Included Themes:
 
@@ -30,11 +27,11 @@ Redmond97 SE Ouroboros
 
 Redmond97 SE Numidium
 
-Redmond97 SE Dusk (Three accent colors)
+Redmond97 SE Dusk (Blue/Red/Purple)
 
-Redmond97 SE Jet (Three accent colors)
+Redmond97 SE Jet (Blue/Red/Purple)
 
-[Old Themes]
+[Microsoft Themes]
 ------------
 Windows 95 (All)
 
@@ -44,6 +41,7 @@ Windows 98 Plus! (Baseball, Jungle, Space and Underwater)
 
 Windows XP (Classic Theme)
 
+
 All themes also have HiDPI variants for 2K and 4K displays.
 
 An included script can be used to create new themes from templates as well.
@@ -51,9 +49,9 @@ An included script can be used to create new themes from templates as well.
 
 Usage
 -----
-Place under ~/.themes or under a global system folder if desired.
+Place desired theme's folder under ~/.themes or under /usr/share/themes.
 
-GTK2/3/4: Select a theme/fonts/etc with your distro's theme selector/a terminal/text editor.
+GTK2/3/4: Select a theme/fonts/etc with xfce4-appearance-settings
 
 Wine: Import the theme's .reg file into a prefix with Wine's regedit.exe
 
@@ -66,30 +64,35 @@ Qt6: qt6ct and qt6gtk2 need installed and GTK set under qt6ct. The QT_QPA_PLATFO
 
 
 Taskbar: A replica of the Windows Explorer System Tray can be made by putting the Tray and Clock applets (in that order) together on the taskbar.
-       The pulseaudio-button plugin is also themed to fit between these visually. Panel icons should be set to a fixed "16x16" size to keep them
-       consistent across things.
+         The pulseaudio-button plugin is also themed to fit between these visually. Panel icons should be set to a fixed "16x16" size to keep them
+         consistent across things.
 
        Included are profiles for the excellent xfce4-panel-profiles addon that replicate a Win9x or Win7 style taskbar: They should be placed in
        either /.local/share/xfce4-panel-profiles/ or /usr/local/share/xfce4-panel-profiles/layouts/ to show up in its Backup/Restore menu.
+       xfce4-panel-profiles is provided in most major distro's repositories.
 
        If not using a profile, border size needs set to at least 1px in all panel's settings for things to look right.
 
 Etc: 
 ----
 
-    1) Panels heavily depend on setting fixed icon sizes to look right. Roughly:
+    1) Panels and plugins heavily depend on setting fixed icon sizes to look right. Roughly:
 
-       Panel Size   Panel Icon Size   Systray Icon Size
-       ----------   ---------------   -----------------
+       Panel Size   Panel Icons Size   Systray Icon Size
+       ----------   ----------------   -----------------
        32px         16px              16px
        48px         32px              24px
        64px         48px              32px
        96px         64px              48px
 
     2) The CSD has a standard Windows button order defined in GTK3/4's settings.ini but Xfce4's xfsettingsd overrides this. 
-       A workaround would be to execute this somwhere at logon: 
-
-	    gsettings set org.gnome.desktop.wm.preferences button-layout menu:minimize,maximize,close
+       Debian 13 also has GTK button images enabled in its Xfce4 defaults and buttons sizes can't be set from the defined
+       data in the theme. Under the "extras" folder is a script named "r97se-fixes.sh" that can be placed in your home
+       directory/etc and set to run at logon to fix this via xfce4-session-settings > Application Autostart. Or execute the
+       following somewhere else:
+        gsettings set org.gnome.desktop.wm.preferences button-layout menu:minimize,maximize,close
+        xfconf-query -c xsettings -p /Gtk/IconSizes -s gtk-menu=32,32:gtk-button=40,40:gtk-small-toolbar=24,24:gtk-large-toolbar=32,32:gtk-dnd=32,32:gtk-dialog=32,32
+        xfconf-query -c xsettings -p /Gtk/ButtonImages -t 'bool' -s 'false';
 
     3) If you're running nm-applet, it won't center correctly on a Deskbar system tray. You can edit /etc/xdg/autostart/nm-applet.desktop
        to exec nm-applet --indicator instead of just nm-applet to fix this.
@@ -118,13 +121,6 @@ Xfce4
 
 GTK2 Specific
 -------------
-In Xfce4, override xfsettingsd's meddling to fix GTK2 icon sizes either by:
-
-a) Run: xfce4-settings-editor > xsettings > IconSizes
-
-   Enter: gtk-menu=32,32:gtk-button=40,40:gtk-small-toolbar=24,24:gtk-large-toolbar=32,32:gtk-dnd=32,32:gtk-dialog=32,32
-
-b) Run: xfconf-query -c xsettings -p /Gtk/IconSizes -s gtk-menu=32,32:gtk-button=40,40:gtk-small-toolbar=24,24:gtk-large-toolbar=32,32:gtk-dnd=32,32:gtk-dialog=32,32
 
 By default, GTK2 assets are unscaled to prevent breaking Qt5/Qt6's GTK engines. The included script "gtk2-scale" can be put under somewhere
 like /usr/local/bin and invoked as such:
@@ -155,6 +151,10 @@ in the configuraton file.
 
 The flag --systeminstall when ran as sudo/su will install to /usr/share/themes instead for either script.
 
+There will be warnings generated by ImagMagick when a color scheme results in grayscale PNGs for the
+arrow graphics. This can be ignored: Trying to supress these has been unsuccessful so far but is planned
+on being fixed at some point.
+
 Why
 ---
 This initially started because I wanted a dark theme with non-flat controls and colors.
@@ -170,28 +170,18 @@ UI set that can be used with shell designs of all sorts in Xfce4.
 Known Issues
 ------------
 [Metacity+HiDPI]
-
 Title fonts in headerbars are tiny . I can't seem to get it to respect any "title_scale" changes in its xml schema.
 
-[GTK3/GTK4 CSD Headerbars]
-
-Xfce4 overrides the theme's button order definitions for these. Can be worked around.
-
-[GTK2+HiDPI]
-
-GTK2 at 4K resolution requires a manual override if an xsettings daemon is running to fix icon scaling.
-
-
 [Wine+HiDPI]
-
 Wine applications' text will be too small at 4K, and if its DPI is manually increased in Winecfg *everything* will be scaled by
 that amount, not just text.. It appears to be a conflict with using GDK_SCALE/Xfce4's Windows Scale 2x function.
 
-
 [Xfce]
-
 The PulseAudioPlugin button on Deskbars is one pixel slightly bigger than any other button: This is a technical issue with also
 making it blend into the Win9x style system tray for horizontal panels.
+
+[Button Shift Effect]
+Some slight imperfections exist in GTK3/4 and GTK2 support also needs added at some point.
 
 
 Credits
@@ -231,10 +221,9 @@ bbitmaster | 2x XPM Scaler Utility
 
 Additional Screenshots
 ----------------------
-![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/2-numidium.png)
-![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/3-jetpurple.png)
-![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/7-duskblue.png)
-![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/4-classic.png)
-![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/5-millennium.png)
+![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/4K-Classic.png)
+![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/4K-Millennium.png)
+![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/4K-Numidium-Deskbar.png)
+![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/4K-JetPurple.png)
 ![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/6-98lite_ouroboros.png)
 

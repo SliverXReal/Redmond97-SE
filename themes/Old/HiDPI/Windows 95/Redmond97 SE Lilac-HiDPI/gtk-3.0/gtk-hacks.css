@@ -1,9 +1,8 @@
 /* File chooser hack to make the location bar 
    widget to match the window bg color */
 
-
 filechooser stack {
-   background-color: @theme_bg_color; }
+    background-color: @theme_bg_color; }
 
 
 filechooser stack box {
@@ -14,14 +13,6 @@ filechooser stack button box {
 
 .horizontal.dialog-actionbox {
    background-color: @theme_bg_color; }
-
-
-/* Fix text button pressing offset effect. 
-Filechooser buttons are giving me problems not wanting to move down on active... */
-.text-button:active label, .text-button:checked label {
-    margin-bottom: -2px;
-    margin-top: 0px;
-}
 
 /* Nemo hacks:
    Add padding below toolbar, hide separators since the 
@@ -60,7 +51,7 @@ Filechooser buttons are giving me problems not wanting to move down on active...
    border-right: 2px solid;
    border-left: 7px solid;
    border-image: url("assets/fm_toolbar.png");
-   border-image-slice: 2 2 2 7; }
+   border-image-slice: 4 4 4 14; }
 
 .nemo-window menubar {
    padding: 0px;
@@ -104,7 +95,7 @@ Filechooser buttons are giving me problems not wanting to move down on active...
    border-right: 2px solid;
    border-left: 2px solid;
    border-image: url("assets/headerbox.png");
-   border-image-slice: 4 4 4 4; 
+   border-image-slice: 4 4 4 4;
    background-color: @toolbar_bg_color; }
 
 
@@ -117,7 +108,7 @@ messagedialog image {
 .caja-navigation-window > grid > paned > * {
    border-top: 2px solid;
    border-image: url("assets/headerbox.png");
-   border-image-slice: 4 4 4 4
+   border-image-slice: 4 4 4 4;
 }
 
 .caja-side-pane treeview {
@@ -228,40 +219,6 @@ messagedialog image {
    box-shadow: 2px 2px @borders inset, 1px 1px @dark_shadow inset, 
               -2px -2px @theme_bg_color inset, -1px -1px @light_shadow inset; }
 
-/* Add borders to buttons on Thunar File Operation window. Does this impact anything else???
-window.background > box > box > box > box > box > button.flat.image-button {
-   padding: 8px 8px 8px 8px;
-   border-radius: 0px;
-   color: @button_fg_color;
-   border-radius: 0px;
-   background-color: @button_bg_color;
-   box-shadow: inset -1px 0 @dark_shadow, inset 0 -1px @dark_shadow, inset 1px 0 @light_shadow, inset 0 1px @light_shadow;
-   outline-offset: -4px; }
-
-window.background > box > box > box > box > box > button.flat.image-button:active {
-   color: @theme_fg_color;
-   box-shadow: 1px 1px @dark_shadow inset;
-   border-color: @borders;
-   background-color: @button_bg_color;
-}
-
-window.background > box > box > box > box > box > button.flat.image-button:checked {
-   color: @theme_fg_color;
-   box-shadow: 1px 1px @dark_shadow inset;
-   border-color: @borders;
-   background-color: @button_bg_color;
-}
-
-window.background > box > box > box > box > box > button.flat.image-button:checked:disabled {
-   color: @disabled_fg_color;
-   text-shadow: 1px 1px @light_shadow;
-   border-color: @borders;
-   background-color: @button_bg_color; }
-
-window.background > box > box > box > box > box > button.flat.image-button:disabled {
-   text-shadow: 1px 1px @light_shadow;
-   color: @disabled_fg_color }  */
-
 #GeanyMenubar {
    padding: 0px;
    margin-top: 0px;
@@ -290,7 +247,7 @@ window.background > box > box > box > box > box > button.flat.image-button:disab
    border-right: 2px solid;
    border-left: 7px solid;
    border-image: url("assets/fm_toolbar.png");
-   border-image-slice: 4 4 4 14; }
+    border-image-slice: 4 4 4 14; }
 
 /* Hide weird "throbber" in Thunar's main menu... */
 .thunar menubar > menuitem:disabled {
@@ -298,3 +255,7 @@ text-shadow: 1px 1px @light_shadow;
 color: transparent;
 background-color: transparent; }
 
+
+.thunar .view {
+    border-radius: 0px;
+}

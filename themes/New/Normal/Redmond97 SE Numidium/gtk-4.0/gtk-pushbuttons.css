@@ -1,0 +1,35 @@
+/* ------------ */
+/* -   GTK4   - */
+/* ------------ */
+
+/* Fix shift effects for certain buttons */
+.tr-pad-large.vertical button:active, .tr-pad-large.vertical button:checked {
+margin-bottom: 0px;
+}
+
+.tr-pad-large.vertical button:active > box, .tr-pad-large.vertical button:checked > box {
+    margin-top: 1px;
+    margin-bottom: -1px;
+    margin-left: 1px;
+    margin-right: -1px;
+}
+
+
+
+grid > box > button:active, grid > box > button:checked {
+margin-bottom: 0px;
+}
+
+
+grid > box > button:active > box, grid > box > button:checked > box {
+    margin-top: 1px;
+    margin-bottom: -1px;
+    margin-left: 1px;
+    margin-right: -1px;
+}
+
+grid > combobox > box > button:active box,
+grid > combobox > box > button:checked box {
+    margin-bottom: 1px;
+    padding: 1px;
+}

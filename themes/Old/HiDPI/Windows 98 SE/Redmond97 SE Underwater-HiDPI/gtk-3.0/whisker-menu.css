@@ -10,21 +10,28 @@
 
 
 #whiskermenu-button {
-   font-weight: bold;
-   padding: 4px;
-   margin-left: 1px;
-   margin-top: 2px;
-   margin-bottom: 2px;
-   color: @theme_fg_color;
-   border-top: 1px solid @button_bg_color;
-   border-left: 1px solid @button_bg_color;
-   border-right: 1px solid @borders;
-   border-bottom: 1px solid @borders; 
-   border-radius: 0px;
-   background-color: @button_bg_color;
-   box-shadow: inset -1px 0 @dark_shadow, inset 0 -1px @dark_shadow, inset 1px 0 @light_shadow, inset 0 1px @light_shadow,
-   0 -1px @light_shadow, 0 -1px @bg_color; }
+	font-weight: bold;
+	padding: 4px;
+	margin-left: 1px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-right: 1px; 
+	border-radius: 0px;
+	border-top: 1px solid @button_bg_color;
+	border-left: 1px solid @button_bg_color;
+	border-right: 1px solid @borders;
+	border-bottom: 1px solid @borders;
+	border-radius: 0px;
+	background-color: @button_bg_color;
+	box-shadow: inset -1px 0 @dark_shadow, inset 0 -1px @dark_shadow, inset 1px 0 @light_shadow, inset 0 1px @light_shadow;
+	outline-offset: -4px;
+}
 
+#whiskermenu-button label {
+margin-left: -2px;
+margin-right: 3px;
+margin-top: 1px;
+}
 
 /* Change active button to checkered button */
 #whiskermenu-button:checked,
@@ -46,34 +53,6 @@
 #whiskermenu-button box > image {
   margin: 2px; }
 
-/* Shift effect on active/checked. */
-
-
-#whiskermenu-button:checked .vertical,
-#whiskermenu-button:active .vertical {
-margin-top: -4px;
-}
-
-#whiskermenu-button:checked box.horizontal > image,
-#whiskermenu-button:active box.horizontal > image {
-    margin-top: 4px;
-    margin-left: 3px;
-    margin-right: 1px;
-}
-
-#whiskermenu-button:checked box.horizontal > label,
-#whiskermenu-button:active box.horizontal > label {
-    margin-top: 1px;
-    margin-left: 1px;
-    margin-right: -1px;
-}
-
-#whiskermenu-button:checked box.vertical > image,
-#whiskermenu-button:active box.vertical > image {
-    margin-top: 7px;
-    margin-left: 4px;
-    margin-bottom: 1px;
-}
 
 #whiskermenu-window scrolledwindow {
   border-radius: 0px;
@@ -87,33 +66,6 @@ margin-top: -4px;
    border-radius: 0px; }
 
 /*SIDELOGO*/
-#whiskermenu-window stack:first-child > scrolledwindow {
-    border: none;
-    box-shadow: none;
-    padding: 1px;
-    padding-left: 2px;
-    margin-left: 1px;
-    margin-bottom: 1px;
-    margin-right: 0px;
-    border-radius: 0px;
-    background-color: @button_bg_color;
-    border-image: url("assets/menu_side.png");
-    border-image-slice: 0 0 0 30;
-    border-left: 25px solid; }
-
-#whiskermenu-window box > scrolledwindow:first-child {
-    border: none;
-    box-shadow: none;
-    padding: 1px;
-    padding-left: 2px;
-    margin-left: 1px;
-    margin-bottom: 1px;
-    margin-right: 0px;
-    border-radius: 0px;
-    background-color: @button_bg_color;
-    border-image: url("assets/menu_side.png");
-    border-image-slice: 0 0 0 30;
-    border-left: 25px solid; }
 /*SIDELOGOEND*/
 
 #whiskermenu-window treeview {

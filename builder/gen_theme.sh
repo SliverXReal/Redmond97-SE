@@ -1,7 +1,8 @@
 #!/bin/bash
-#v1.85
+#v2.0
 #Dependencies: imagemagick7, bc, sed, grep, tee, tar
 
+# Minimal sanity check of run mode.
 if [ -z $1 ]; then printf "\nError. Pass the path to a theme config file, --systeminstall, or both.\n\n"; exit; fi
 
 # By default, install to user's theme directory.
@@ -17,11 +18,15 @@ case "$1" in
 # This is a theme template, hopefully! Set it as the config file for the build script.
 *.conf)
 export CONFY=$1
+
 # Load theme data and set variables.
 . "$CONFY"
 code=""
 rgb=""
 invalid_entry=0
+
+# Minimal sanity check of config file.
+if [ -z "$Theme_name" ]; then printf "\nError. This does not appear to be a Redmond97 SE theme file?\n\n"; exit; fi
 ;;
 
 # Install to system instead of user folder. Check for root status, fail if not valid.
@@ -242,13 +247,17 @@ cd ../
 done
 cd assets
 
+# Change all generated PNGs from grayscale to RGB so we don't get tons of unblockable warnings at compile time from ImageMagick...
+    magick mogrify -colorspace sRGB -colors 256 *.png
+
 #compile arrows
-mv arrow.png arrow_up.png
-magick convert -rotate "90" arrow_up.png arrow_right.png
-magick convert -rotate "90" arrow_right.png arrow_down.png
-magick convert -rotate "90" arrow_down.png arrow_left.png
+    magick convert -rotate "90" arrow.png arrow_right.png
+    magick convert -rotate "90" arrow_right.png arrow_down.png
+    magick convert -rotate "90" arrow_down.png arrow_left.png
+    magick convert -rotate "90" arrow_left.png arrow_up.png
+    rm -f arrow.png
 for i in $(ls arrow*.png); do
-  magick convert "$i" -fuzz 15% -fill "#$disabled_fgcolor" -opaque "$fgcolor" ${i%.*}"_ins.png"
+    magick convert "$i" -fuzz 15% -fill "#$disabled_fgcolor" -opaque "$fgcolor" ${i%.*}"_ins.png"
 done
 
 #compile all scrollbar buttons
@@ -519,7 +528,7 @@ build_theme_config
 
 # Disable side bar on Whisker Menu?
 if [ $(echo "$enable_alternate_menu" | grep -ci "false") -lt 1 ]; then
-sed -i '/SIDELOGO/,/SIDELOGOEND/{//!d}' ./whisker-menu.css ./gtk-3.0/whisker-menu.css
+sed -i '/SIDELOGO/,/SIDELOGOEND/{//!d}' ./gtk-3.0/whisker-menu.css
 fi
 
 theme_name="Redmond97 SE $Theme_name"
@@ -644,6 +653,27 @@ sed -i "s/CursorSize=16/CursorSize=34/g" $THEMEDEST/"$theme_name"-HiDPI/index.th
 mkdir $THEMEDEST/"$theme_name"-HiDPI/wine
 cp "$theme_name".reg $THEMEDEST/"$theme_name"-HiDPI/wine/
 
+# Button Shift Effect
+case $button_shift in 
+
+0)
+# No label shift for *any* button.
+cp ./etc/null-pushbuttons.css $THEMEDEST/"$theme_name"-HiDPI/gtk-3.0/gtk-pushbuttons.css
+cp ./etc/null-pushbuttons.css $THEMEDEST/"$theme_name"-HiDPI/gtk-4.0/gtk-pushbuttons.css
+;;
+
+1)
+# Shift select Xfce4 Panel buttons.
+cp ./etc/xfce4only-pushbuttons.css $THEMEDEST/"$theme_name"-HiDPI/gtk-3.0/gtk-pushbuttons.css
+cp ./etc/xfce4only-pushbuttons.css $THEMEDEST/"$theme_name"-HiDPI/gtk-4.0/gtk-pushbuttons.css
+;;
+
+*)
+# Shift all Xfce4 Panel buttons in addition to GTK3/GTK4: This is default, so do nothing!
+;;
+
+esac
+
 fi
 
 # Normal DPI theme.
@@ -662,12 +692,33 @@ mv "$theme_name".reg $THEMEDEST/"$theme_name"/wine/
 echo "GTK2, GTK3 and XFWM4 themes configured and installed."
 echo "Theme '$theme_name' installed in $THEMEDEST/$theme_name. You may now select and use your theme."
 
+# Button Shift Effect
+case $button_shift in 
+
+0)
+# No label shift for *any* button.
+cp ./etc/null-pushbuttons.css $THEMEDEST/"$theme_name"/gtk-3.0/gtk-pushbuttons.css
+cp ./etc/null-pushbuttons.css $THEMEDEST/"$theme_name"/gtk-4.0/gtk-pushbuttons.css
+;;
+
+1)
+# Shift select Xfce4 Panel buttons.
+cp ./etc/xfce4only-pushbuttons.css $THEMEDEST/"$theme_name"/gtk-3.0/gtk-pushbuttons.css
+cp ./etc/xfce4only-pushbuttons.css $THEMEDEST/"$theme_name"/gtk-4.0/gtk-pushbuttons.css
+;;
+
+*)
+# Shift all Xfce4 Panel buttons in addition to GTK3/GTK4: This is default, so do nothing!
+;;
+
+esac
+
 }
 
 
 function cleanup {
 #Clean incomplete or interupted builds, compile images
-rm -rf gtk-2.0 gtk-3.0 images xfwm4 xfwm4-hidpi hidpi-res
+rm -rf gtk-2.0 gtk-3.0 images xfwm4 xfwm4-hidpi hidpi-res etc
 rm rm base.rc gtk.css gtk-base.css gtkrc themerc version LICENSE
 }
 

@@ -13,27 +13,6 @@
    background-color: @button_bg_color;
    padding-bottom: 0px; }
 
-#XfcePanelWindow .horizontal button {
-   margin: 2px;
-   margin-left: 0px; }
-
-#XfcePanelWindow.deskbar button, #XfcePanelWindow.deskbar button:active, #XfcePanelWindow.deskbar button:checked {
-    margin: 1px;
-    padding: 4px;
-}
-
-#XfcePanelWindow.deskbar button:active box > image, #XfcePanelWindow.deskbar button:checked box > image {
-    margin-left: 1px
-}
-
-#XfcePanelWindow .horizontal button > box {
-   margin-top: 1px;
-   margin-right: 3px; }
-
-#XfcePanelWindow .horizontal button box > image {
-   margin-right: -5px; }
-
-
 #XfcePanelWindowWrapper {
    box-shadow: 0 1px @light_shadow;
    margin-top: 3px; }
@@ -53,23 +32,8 @@
    color: @toolbar_fg_color;
    background-color: @button_bg_color; }
 
-/* Icon/Label Shift on Active/Press */
-
-#XfcePanelWindow .horizontal button:active image, #XfcePanelWindow .horizontal button:checked image {
-    margin-top: 1px;
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-#XfcePanelWindow .horizontal button:active label, #XfcePanelWindow .horizontal button:checked label {
-    margin-top: 2px;
-    margin-bottom: 0px;
-    margin-left: -5px;
-    margin-right: 0px;
-}
-
 #XfcePanelWindow.deskbar button:active, #XfcePanelWindow.deskbar button:checked, #XfcePanelWindow #launcher-arrow:active, #XfcePanelWindow #launcher-arrow:checked {
+   margin: 1px;
    border: none;
    box-shadow: none;
    border-top: 1px solid @borders;
@@ -82,28 +46,27 @@
    background-color: @button_bg_color; }
 
 
+/* Flat button hover border! */
 #XfcePanelWindow #launcher-arrow, 
 #XfcePanelWindow #launcher-arrow:hover {
    border-radius: 0;
    margin: 1px;
    padding: 3px; }
 
-#XfcePanelWindow #launcher-arrow:active image, #XfcePanelWindow #launcher-arrow:checked image,
-#XfcePanelWindow #launcher-arrow:active label, #XfcePanelWindow #launcher-arrow:checked label {
-    margin-top: 1px;
-    margin-bottom: -1px;
-    margin-left: 1px;
-    margin-right: -1px;
-}
-
-
 #XfcePanelWindow {
    box-shadow: 0 1px @light_shadow inset;
    border-top: @light_shadow 1px solid; }
 
+/* Create border outline for Deskbar panels */
 #XfcePanelWindow.deskbar {
    box-shadow: inset 0px 0 @dark_shadow, inset 0 0px @dark_shadow, inset 1px 0 @light_shadow, inset 0 1px @light_shadow,
    0 0px @light_shadow, 0 0px @bg_color; }
+
+/* Fix phantom outlines on icon move for Desktop icons. */
+XfdesktopIconView {
+    border-radius: 0px;
+    outline-style: hidden;
+}
 
 XfdesktopIconView .view {
    color: #fff; 
@@ -198,7 +161,7 @@ up to 99 different positions (99 in case of hypothetical multi-monitor setups wi
    box-shadow: 1px 3px @dark_shadow inset, 0 2px @bg_color inset, 0 -1px @light_shadow inset;
    margin-top: 1px;
    padding-top: 0;
-   padding-left: 3px;
+   padding-left: 5px;
    border-right: none;
    padding-bottom: 2px;
    margin-bottom: 2px;
@@ -241,11 +204,11 @@ margin-top: 1px;
     background-image: url("assets/scrollbar_trough.png");
     color: @toolbar_fg_color;
     margin-left: 2px;
-    margin-right: 2px;
+    margin-right: 1px;
     background-color: @button_bg_color;
 }
 
-/* Make all system tray button type icons behave intertly. */
+/* Make all system tray button type icons behave inertly. */
 #systray-1 > box.horizontal button, #systray-2 > box.horizontal button, #systray-3 > box.horizontal button, #systray-4 > box.horizontal button,
 #systray-5 > box.horizontal button, #systray-6 > box.horizontal button, #systray-7 > box.horizontal button, #systray-8 > box.horizontal button,
 #systray-9 > box.horizontal button, #systray-10 > box.horizontal button, #systray-11 > box.horizontal button, #systray-12 > box.horizontal button,
@@ -347,9 +310,9 @@ margin-top: 1px;
 #systray-92 > box.vertical image, #systray-93 > box.vertical image, #systray-94 > box.vertical image, #systray-95 > box.vertical image, 
 #systray-96 > box.vertical image, #systray-97 > box.vertical image, #systray-98 > box.vertical image, #systray-99 > box.vertical image {
     box-shadow: 0px 0px 0px 0px @light_shadow inset;
-    margin-top: 2px;
+    margin-top: 1px;
     margin-bottom: 2px;
-    margin-left: -2px;
+    margin-left: -1px;
     margin-right: 1px;
     background-color: transparent;
 }

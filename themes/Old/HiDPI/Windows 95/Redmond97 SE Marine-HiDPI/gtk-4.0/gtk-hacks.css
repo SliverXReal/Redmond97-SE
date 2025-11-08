@@ -6,9 +6,8 @@
  * Window *
  **********/
 
-/*Hack to fix outlines around literally everything when pointing to Redmond97's GTK3 theme*/
+/*Hack to fix dotted outlines around literally everything when pointing to Redmond97's GTK3 theme*/
 window * {
-    border-radius: 0px;
     outline-style: hidden;
 }
 
@@ -25,3 +24,6 @@ window.background filechooser listview *,window.background filechooser gridview 
     background-color: @bg_color;
     border-radius: 0; 
 }
+
+
+
