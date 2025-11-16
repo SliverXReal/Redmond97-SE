@@ -1,3 +1,11 @@
+v2.02
+~~~~~
+1) Improvements for full button shift effect.
+2) Fixed PNG scaling for certain Notebook tabs in HiDPI themes.
+3) New dark theme ("In Tenebris").
+4) Cleaned up theme config files' formatting.
+
+
 v2.01
 ~~~~~
 1) Fixed side logo function for Whisker Menu.
