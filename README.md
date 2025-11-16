@@ -27,6 +27,8 @@ Redmond97 SE Ouroboros
 
 Redmond97 SE Numidium
 
+Redmond97 SE In Tenebris
+
 Redmond97 SE Dusk (Blue/Red/Purple)
 
 Redmond97 SE Jet (Blue/Red/Purple)
