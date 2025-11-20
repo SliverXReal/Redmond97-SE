@@ -11,7 +11,7 @@
 button:active box, button:checked box, button:checked:disabled box,
 button.flat:active > *, button.flat:checked > *, button.flat:checked:disabled > *,
 button.text-button:active > *, button.text-button:checked > *, button.text-button:checked:disabled > *,
-button.image-button:active image, button.image-button:checked image, button.image-button:checked:disabled image,
+button.image-button:active > *, button.image-button:checked > *, button.image-button:checked:disabled > *,
 button.flat.image-button:active > *, button.flat.image-button:checked > *, button.flat.image-button:checked:disabled > *
 {
     margin-top: 1px;
@@ -21,14 +21,7 @@ button.flat.image-button:active > *, button.flat.image-button:checked > *, butto
 }
 
 
-/* Edge Cases / Hacks */
-
-/* Fix double shift on certain buttons */
-button.image-button:active image, button.image-button:checked image, button.image-button:checked:disabled image,
-button.flat.image-button:active image, button.flat.image-button:checked image, button.flat.image-button:checked:disabled image
-{
-margin: 0px;
-}
+/* Edge Cases */
 
 /* Font selector buttons get a double dose of shifting on second label: Negate! */
 button.font:active > box > box > label, button.font:checked > box > box > label, button.font:checked:disabled > box > box > label {
@@ -46,19 +39,11 @@ button.font:active > box > box > label, button.font:checked > box > box > label,
 .dialog-action-box.horizontal buttonbox button.text-button:active label,
 .dialog-action-box.horizontal buttonbox button.text-button:checked label,
 .dialog-action-box.horizontal buttonbox button.text-button:checked:disabled label {
-    margin-top: 0px;
+    margin-top: -1px;
 }
 
 
-/*  Filechooser button widget labels! */
-.dialog-action-box.horizontal buttonbox button:active widget box,
-.dialog-action-box.horizontal buttonbox button:checked widget box
-{
-    margin: 0px;
-    margin-left: 1px;
-    margin-right: -1px;
-}
-
+/* Hacks!!! */
 
 /* Handbrake "To: button and I'm sure other things. This totally fixes it! */
 grid button:active > box, grid button:checked > box, grid button:checked:disabled box {

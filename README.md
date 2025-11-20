@@ -2,11 +2,11 @@ Redmond97 SE
 
 Windows 95 OSR2 UI for Xfce4 4.20
 
-v2.02 / 2025 Sliver X
+v2.03 / 2025 Sliver X
 
 ![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/4K-Ouroboros.png)
 
-These themes are recreations of the Windows 95 (OSR 2-era, "Detroit") GUI controls for GTK2, GTK3, GTK4, Xfwm4, Metacity and Wine.
+These themes are recreations of the Windows 95 (OSR 2.x-era, "Detroit") GUI controls for GTK2, GTK3, GTK4, Xfwm4, Metacity and Wine.
 
 It is a fork of the Redmond97 project. The main additions are GTK4 support, HiDPI themes, companion Wine color themes and an extended builder script.
 It also has much deeper integration into Xfce4 and its plugins and full Deskbar panel support.
@@ -55,27 +55,36 @@ Place desired theme's folder under ~/.themes or under /usr/share/themes.
 
 GTK2/3/4: Select a theme/fonts/etc with xfce4-appearance-settings
 
+Qt5/Qt6:  There are two ways to handle this, both with pros and cons amounting to if you want GTK2 or Qt apps to look better at 2K/4K resolutions.
+
+    1) Match GTK theme at normal resolutions but with some imperfections and issues with scaling at HiDPI modes:
+          
+       qt5ct qt5-styleplugins, qt6ct and qt6gtk2 (Or whatever packages the QT5/QT6 GTK theme resides in for your distro) need 
+       installed and GTK/fonts/etc set under qt5ct and qt6ct.
+          
+       The following must be set in /etc/environment for both to work:
+       export QT_QPA_PLATFORMTHEME="qt5ct"
+
+    2) Minimally match GTK theme (Colors and Font match but controls look like Adwaita) but with simpler setup and consistent behavior at all resolutions.
+       This allows running GTK2 applications with 2x scaled assets without issue for HiDPI at the expense of Qt applications standing out more.
+          
+       Set the following in /etc/environment:
+       export QT_QPA_PLATFORMTHEME=gtk3
+
 Wine: Import the theme's .reg file into a prefix with Wine's regedit.exe
 
-Qt5: qt5ct and qt5-styleplugins (Or whatever package the QT5 GTK theme resides in for your distro) need installed and GTK/fonts/etc set under qt5ct.
-     The following must be set somewhere such as /etc/environment:
+Included are profiles for the excellent xfce4-panel-profiles addon that replicate a Win9x or Win7 style taskbar along with a basic Deskbar setup:
+They should be placed in either /.local/share/xfce4-panel-profiles/ or /usr/local/share/xfce4-panel-profiles/layouts/ to show up in its Backup/Restore menu.
+xfce4-panel-profiles is provided in most major distro's repositories or can be compiled and installed manually.
 
-	export QT_QPA_PLATFORMTHEME="qt5ct"
-
-Qt6: qt6ct and qt6gtk2 need installed and GTK set under qt6ct. The QT_QPA_PLATFORMTHEME="qt5ct" variable works for it as well.
-
+If not using a profile, border size needs set to at least 1px in all panel's settings for things to look right.
 
 Taskbar: A replica of the Windows Explorer System Tray can be made by putting the Tray and Clock applets (in that order) together on the taskbar.
 The pulseaudio-button plugin is also themed to fit between these visually. Panel icons should be set to a fixed "16x16" size to keep them
 consistent across things.
 
-Included are profiles for the excellent xfce4-panel-profiles addon that replicate a Win9x or Win7 style taskbar: They should be placed in
-either /.local/share/xfce4-panel-profiles/ or /usr/local/share/xfce4-panel-profiles/layouts/ to show up in its Backup/Restore menu.
-xfce4-panel-profiles is provided in most major distro's repositories.
 
-If not using a profile, border size needs set to at least 1px in all panel's settings for things to look right.
-
-Etc: 
+Etc:
 ----
 
     1) Panels and plugins heavily depend on setting fixed icon sizes to look right. Roughly:
@@ -91,10 +100,11 @@ Etc:
        Debian 13 also has GTK button images enabled in its Xfce4 defaults and buttons sizes can't be set from the defined
        data in the theme. Under the "extras" folder is a script named "r97se-fixes.sh" that can be placed in your home
        directory/etc and set to run at logon to fix this via xfce4-session-settings > Application Autostart. Or execute the
-       following somewhere else:
-        gsettings set org.gnome.desktop.wm.preferences button-layout menu:minimize,maximize,close
-        xfconf-query -c xsettings -p /Gtk/IconSizes -s gtk-menu=32,32:gtk-button=40,40:gtk-small-toolbar=24,24:gtk-large-toolbar=32,32:gtk-dnd=32,32:gtk-dialog=32,32
-        xfconf-query -c xsettings -p /Gtk/ButtonImages -t 'bool' -s 'false';
+       following somewhere:
+
+       gsettings set org.gnome.desktop.wm.preferences button-layout menu:minimize,maximize,close
+       xfconf-query -c xsettings -p /Gtk/IconSizes -s gtk-menu=32,32:gtk-button=40,40:gtk-small-toolbar=24,24:gtk-large-toolbar=32,32:gtk-dnd=32,32:gtk-dialog=32,32
+       xfconf-query -c xsettings -p /Gtk/ButtonImages -t 'bool' -s 'false'
 
     3) If you're running nm-applet, it won't center correctly on a Deskbar system tray. You can edit /etc/xdg/autostart/nm-applet.desktop
        to exec nm-applet --indicator instead of just nm-applet to fix this.
@@ -104,6 +114,7 @@ Etc:
 
     5) Many plugins work fine in Deskbar mode if you disable their text, like Window Buttons, Application Menu, etc.
 
+    6) Mate Desktop support is inherited from the original Redmond97 project, and has been minimally verified to work as expected (On Debian 13), but is unsupported.
 
 [HiDPI Themes]
 ==============
@@ -130,6 +141,11 @@ like /usr/local/bin and invoked as such:
 	gtk2-scale <GTK2 APPLICATION>
 
 This will load the scaled GTK2 theme for the currently selected Redmond97 SE theme, but will only work in setups that don't have an xsettings daemon running.
+
+
+GTK4 Specific
+-------------
+Installing libadwaita-without-adwaita can make most Adwaita applications mostly match the themes.
 
 
 Theme generator script
@@ -226,5 +242,6 @@ Additional Screenshots
 ![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/4K-In-Tenebris.png)
 ![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/4K-Numidium-Deskbar.png)
 ![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/4K-JetPurple.png)
+![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/4K-Teal.png)
 ![Image Screenshot](https://github.com/SliverXReal/Redmond97-SE/blob/master/screenshots/6-98lite_ouroboros.png)
 
